@@ -6,7 +6,7 @@ import { Note } from "@/components/annotations";
 
 const PIECES = [
   {
-    id: 1, src: "/art-5.jpg", caption: "the sketchbook, outdoors", kind: "pencil on paper",
+    id: 1, src: "/art-5.jpg", caption: "the sketch", kind: "pencil on paper",
     note: "Every stroke matters. The pressure of the pencil decides whether a line whispers or speaks.",
     alt: "Pencil sketch of a young woman shielding her eyes, in an open sketchbook held up against green plants",
   },
@@ -29,6 +29,11 @@ const PIECES = [
     id: 5, src: "/art-1.jpg", caption: "radha's feet, krishna's hands", kind: "acrylic on canvas",
     note: "A small moment of devotion, held in colour and stillness. The most patient thing I've ever painted.",
     alt: "Acrylic painting of Krishna's blue hands holding Radha's feet, with a pink lotus beside them",
+  },
+  {
+    id: 6, src: "/art-6.jpg", caption: "a leaf in rain", kind: "watercolour",
+    note: "With no electricity and rain outside, I found a little light in painting what was right in front of me.",
+    alt: "Watercolour painting of a single brown leaf floating in rain-rippled green water, in a spiral sketchbook",
   },
 ];
 
