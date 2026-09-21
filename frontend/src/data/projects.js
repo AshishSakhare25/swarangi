@@ -13,8 +13,13 @@ export const PROJECTS = [
     slider: {
       messy: ["internships", "jobs", "mentorship", "hackathons", "courses", "webinars", "question banks", "networking", "CVs", "recruiters", "admins", "students"],
       wireLabel: "one shell, many user types — the system before the screens",
-      clearLabel: "a platform that holds it all without feeling heavy",
+      clearLabel: "the dashboard, live and breathing",
+      clearImage: "/cs-mentblue-dashboard.jpg",
     },
+    interfaceShots: [
+      { src: "/cs-mentblue-dashboard.jpg", alt: "MentBlue web dashboard — overview with eligible opportunities and recommended internships", caption: "the dashboard — desktop" },
+      { src: "/screen-mentblue-home.jpg", alt: "MentBlue landing page on a laptop mockup", caption: "the website" },
+    ],
     chapters: {
       mess: "Internships, jobs, mentorship, hackathons, courses, webinars, question banks and professional networking — all inside one product, for students, professionals, recruiters and admins at the same time. The challenge was never any single screen. It was everything, at once.",
       questions: [

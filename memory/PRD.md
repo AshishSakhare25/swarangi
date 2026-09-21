@@ -57,6 +57,9 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
   note line now "there are more. I should probably add them."; observation wall — card 01 dots removed + arrow on
   hover, card 03 per-button icons/varied colors (apply plain), card 05 bookmark icon; About meta line includes
   GoodLives + LPU; photo annotations now on paper pills for readability
+- 2026-07-21: MentBlue case study uses REAL screens — slider CLEAR side = actual dashboard
+  (cs-mentblue-dashboard.jpg), middle = hand-built lo-fi wireframe of the same screen; THE INTERFACE chapter
+  shows real dashboard + website shots tagged "real screen". GoodLives/TX still use mock frames (next)
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens

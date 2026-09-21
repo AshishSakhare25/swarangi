@@ -291,11 +291,27 @@ export default function CaseStudy() {
 
           <Chapter num="04" title="The interface">
             <p className="text-base leading-relaxed text-smoke sm:text-lg">{c.interface}</p>
+            {project.interfaceShots ? (
+              <div className="mt-8 space-y-6">
+                {project.interfaceShots.map((s) => (
+                  <figure key={s.src} className="group overflow-hidden rounded-md border border-line bg-white p-3 shadow-paper transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lift">
+                    <div className="overflow-hidden rounded-sm border border-line">
+                      <img src={s.src} alt={s.alt} loading="lazy" className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]" />
+                    </div>
+                    <figcaption className="flex items-baseline justify-between px-1 pt-3">
+                      <span className="font-hand text-lg text-ink">{s.caption}</span>
+                      <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-ember">real screen</span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            ) : (
             <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
               {MOCK_VARIANTS[project.slug].map(([variant, caption]) => (
                 <MockFrame key={variant} project={project} variant={variant} caption={caption} />
               ))}
             </div>
+            )}
           </Chapter>
 
           <Chapter num="05" title="The experience">
