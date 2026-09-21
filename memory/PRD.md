@@ -45,6 +45,8 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
   Radha/Krishna acrylic on canvas (art-1) — all optimized to 1000px webp→jpg, matted frames, object-contain
 - 2026-07-21: first four pieces rotated 90° to true vertical (subjects upright); full-screen lightbox added
   (click/Escape/backdrop close, lenis pause, per-piece creation-day note)
+- 2026-07-21: Node map centre replaced with collage of 5 REAL product screens (MentBlue home + dashboard,
+  GoodLives dashboard + sloth signup, TX event selection) — fan-out on hover, compact stack on mobile
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens

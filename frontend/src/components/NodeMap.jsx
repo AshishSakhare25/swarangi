@@ -13,6 +13,39 @@ const NODES = [
   { id: "edge", label: "EDGE CASES", thought: "What happens when things don't go as planned?", x: 9, y: 41, testid: "node-item-edge-cases" },
 ];
 
+const COLLAGE = [
+  { src: "/screen-mentblue-home.jpg", alt: "MentBlue landing page", cls: "-left-16 top-1 w-36 -rotate-6 group-hover:-rotate-12 group-hover:-translate-x-3 group-hover:-translate-y-1" },
+  { src: "/screen-tx-events.jpg", alt: "TX event type selection", cls: "-right-16 -top-3 w-36 rotate-6 group-hover:rotate-12 group-hover:translate-x-3 group-hover:-translate-y-2" },
+  { src: "/screen-goodlives-dashboard.jpg", alt: "GoodLives dashboard", cls: "-left-12 bottom-0 w-32 rotate-3 group-hover:rotate-6 group-hover:-translate-x-2 group-hover:translate-y-2" },
+  { src: "/screen-mentblue-dashboard.jpg", alt: "MentBlue dashboard", cls: "-right-14 bottom-2 w-32 -rotate-3 group-hover:-rotate-6 group-hover:translate-x-2 group-hover:translate-y-2" },
+];
+
+const ScreenCollage = ({ compact = false }) => (
+  <div
+    data-testid={compact ? "node-map-collage-mobile" : "node-map-collage"}
+    className={`group relative ${compact ? "mx-auto h-40 w-64" : "h-44 w-56"}`}
+  >
+    {COLLAGE.map((s) => (
+      <img
+        key={s.src}
+        src={s.src}
+        alt={s.alt}
+        loading="lazy"
+        className={`absolute rounded-md border-2 border-white object-cover shadow-lift transition-all duration-500 ease-out ${s.cls}`}
+      />
+    ))}
+    <img
+      src="/screen-goodlives-signup.jpg"
+      alt="GoodLives signup with the sloth"
+      loading="lazy"
+      className="absolute left-1/2 top-1/2 h-36 -translate-x-1/2 -translate-y-1/2 -rotate-2 rounded-md border-2 border-white object-cover shadow-lift transition-all duration-500 ease-out group-hover:rotate-0 group-hover:scale-105"
+    />
+    <p className="absolute -bottom-9 left-1/2 w-max -translate-x-1/2 font-hand text-lg text-smoke" style={{ transform: "translateX(-50%) rotate(-1.5deg)" }}>
+      the screens so far
+    </p>
+  </div>
+);
+
 export default function NodeMap() {
   const [active, setActive] = useState(null);
   const activeNode = NODES.find((n) => n.id === active);
@@ -51,17 +84,7 @@ export default function NodeMap() {
           </svg>
 
           <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-            <div className="flex w-44 flex-col gap-2 rounded-lg border-[1.5px] border-ink/70 bg-white p-3 shadow-paper">
-              <div className="flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-ember" />
-                <span className="h-2 w-2 rounded-full bg-lav" />
-                <span className="h-2 w-2 rounded-full bg-sage" />
-              </div>
-              <div className="h-1.5 w-3/4 rounded-full bg-ink/60" />
-              <div className="h-1.5 w-1/2 rounded-full bg-ink/20" />
-              <div className="mt-1 h-6 w-2/3 rounded-full bg-ember/90" />
-              <p className="mt-1 text-center font-mono text-[9px] uppercase tracking-[0.2em] text-ash">the screen</p>
-            </div>
+            <ScreenCollage />
           </div>
 
           {NODES.map((n) => (
@@ -97,7 +120,10 @@ export default function NodeMap() {
       </Reveal>
 
       {/* Mobile vertical story */}
-      <div className="mt-12 space-y-3 md:hidden">
+      <div className="mt-12 md:hidden">
+        <ScreenCollage compact />
+      </div>
+      <div className="mt-14 space-y-3 md:hidden">
         {NODES.map((n, i) => (
           <Reveal key={n.id} delay={i * 0.05}>
             <button
