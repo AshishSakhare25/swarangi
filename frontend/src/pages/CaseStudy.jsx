@@ -264,8 +264,7 @@ const InterfaceCarousel = ({ shots, liveUrl }) => {
             rel="noopener noreferrer"
             className="group/live font-hand text-lg text-smoke transition-colors hover:text-ember"
           >
-            visit mentblue.com to see the product live
-            <span className="inline-block transition-transform duration-300 group-hover/live:translate-x-1" aria-hidden="true"> →</span>
+            visit <span className="border-b border-ember/50 text-ember">mentblue.com&nbsp;↗</span> to see the product live
           </a>
         </p>
       )}
@@ -369,13 +368,37 @@ export default function CaseStudy() {
                 )}
                 {(project.interfaceShots || []).map((s) => (
                   <figure key={s.src} className="group overflow-hidden rounded-md border border-line bg-white p-3 shadow-paper transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lift">
-                    <div className="overflow-hidden rounded-sm border border-line">
-                      <img src={s.src} alt={s.alt} loading="lazy" className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]" />
-                    </div>
+                    {s.scroll ? (
+                      <div className="relative overflow-hidden rounded-sm border border-line bg-cream/60">
+                        <div data-testid="website-scroll-box" className="max-h-[480px] overflow-y-auto">
+                          <img src={s.src} alt={s.alt} loading="lazy" className="w-full object-top" />
+                        </div>
+                        <span className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-ink/80 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-paper">
+                          scroll inside ↓
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="overflow-hidden rounded-sm border border-line">
+                        <img src={s.src} alt={s.alt} loading="lazy" className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]" />
+                      </div>
+                    )}
                     <figcaption className="flex items-baseline justify-between px-1 pt-3">
                       <span className="font-hand text-lg text-ink">{s.caption}</span>
                       <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-ember">real screen</span>
                     </figcaption>
+                    {project.liveUrl && (
+                      <p className="px-1 pb-1 pt-1.5">
+                        <a
+                          data-testid="case-study-live-link-website"
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-hand text-lg text-smoke transition-colors hover:text-ember"
+                        >
+                          visit <span className="border-b border-ember/50 text-ember">mentblue.com&nbsp;↗</span> to see the product live
+                        </a>
+                      </p>
+                    )}
                   </figure>
                 ))}
               </div>

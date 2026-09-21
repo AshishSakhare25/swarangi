@@ -17,7 +17,7 @@ export const PROJECTS = [
       clearImage: "/cs-mentblue-dashboard.jpg",
     },
     interfaceShots: [
-      { src: "/screen-mentblue-home.jpg", alt: "MentBlue landing page on a laptop mockup", caption: "the website" },
+      { src: "/cs-mentblue-website-full.jpg", alt: "MentBlue full-length landing page — hero, jobs, courses, mentors, plans, FAQ", caption: "the website — full length", scroll: true },
     ],
     liveUrl: "https://mentblue.com",
     interfaceCarousel: [
