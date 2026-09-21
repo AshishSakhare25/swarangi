@@ -1,0 +1,163 @@
+{
+  "project_name": "Swarangi Yeole Portfolio",
+  "concept": "FROM THOUGHT → TO PRODUCT (SKETCHBOOK × PRODUCT STUDIO)",
+  "personality": "thoughtful, visually curious, artistic, observant, slightly playful, calm, detail-oriented, product-minded, human",
+  "context": "Marketing / Portfolio Page with Editorial Product Studio Vibe",
+  "archetype": "ORGANIC & EDITORIAL / ART-DIRECTED DIGITAL EXPERIENCE",
+  "file_format": ".js React components with Tailwind CSS and Framer Motion",
+  "design_system": {
+    "colors": {
+      "theme": "Light mode by default with warm paper canvas aesthetic",
+      "background_primary": "#FBF9F5",
+      "background_paper": "#F5F1E8",
+      "background_card": "#FFFFFF",
+      "text_primary": "#1A1A1A",
+      "text_secondary": "#52524E",
+      "text_muted": "#8C8A84",
+      "signature_accent": "#FF5A36",
+      "signature_accent_hover": "#E04A28",
+      "accent_lavender": "#EADEF0",
+      "accent_pale_blue": "#E2EBF4",
+      "accent_soft_green": "#E3EDE3",
+      "annotation_ink": "#111111",
+      "border_subtle": "#E6E2D8",
+      "border_dark": "#262626",
+      "grid_line": "#EDE8DE"
+    },
+    "typography": {
+      "font_family_display": "'Playfair Display', 'Cormorant Garamond', serif",
+      "font_family_sans": "'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif",
+      "font_family_handwritten": "'Caveat', 'Architects Daughter', cursive",
+      "font_family_mono": "'JetBrains Mono', monospace",
+      "hierarchy": {
+        "h1": "text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight font-medium leading-[1.1]",
+        "h2": "text-2xl sm:text-3xl lg:text-4xl font-serif tracking-tight font-medium leading-[1.2]",
+        "h3": "text-xl sm:text-2xl font-sans tracking-snug font-semibold text-text_primary",
+        "h4": "text-lg sm:text-xl font-sans font-medium text-text_primary",
+        "body_large": "text-lg sm:text-xl text-text_secondary leading-relaxed font-normal",
+        "body": "text-base text-text_secondary leading-relaxed font-normal",
+        "small": "text-sm text-text_muted font-normal",
+        "caption": "text-xs font-mono uppercase tracking-widest text-text_muted",
+        "annotation": "font-handwritten text-lg sm:text-xl text-signature_accent dark:text-signature_accent leading-snug"
+      }
+    },
+    "textures_and_effects": {
+      "paper_grain": "Subtle noise overlay (SVG background filter or inline noise PNG tile with 3% opacity)",
+      "borders": "1px solid #E6E2D8 with hand-drawn SVG underline or circle accents for highlight moments",
+      "shadows": {
+        "soft_paper": "0 10px 30px -10px rgba(26,26,26,0.05), 0 2px 6px -2px rgba(26,26,26,0.03)",
+        "hover_card": "0 20px 40px -15px rgba(255,90,54,0.12), 0 4px 12px -2px rgba(26,26,26,0.04)"
+      },
+      "radii": "rounded-sm for structural cards (2px-4px), rounded-full for pills/buttons, rounded-none for crisp paper spreads"
+    },
+    "motion": {
+      "library": "framer-motion + lenis smooth scroll",
+      "scroll": "Smooth momentum scrolling via Lenis. Framer Motion view-triggered stagger for section entrances",
+      "hero_transformation": "Scroll/timed progression: Thought (floating sketch text/cloud) → Rough Sketch (hand-drawn wireframe) → Structured Wireframe → Polished High-Fi Interface",
+      "hover_micro_interactions": "Subtle scale-up (1.02), arrow translations (translate-x-1), annotation line draw-in animations, cursor custom ink dot",
+      "case_study_slider": "Draggable Messy↔Clear comparison slider with smooth motion inertia"
+    }
+  },
+  "sections_breakdown": [
+    {
+      "id": "nav",
+      "name": "Floating Navigation Header",
+      "components": ["Minimal glass/paper float bar", "SWARANGI logo (serif + hand-drawn period)", "Nav Links: Work, Thinking, About, Contact", "'Let's talk →' signature accent CTA"],
+      "test_ids": ["nav-bar", "nav-logo", "nav-link-work", "nav-link-thinking", "nav-link-about", "nav-link-contact", "nav-cta-button"]
+    },
+    {
+      "id": "hero",
+      "name": "Hero Section - MY BRAIN IS A CANVAS",
+      "components": ["Kinetic Transformation Canvas (Thought → Sketch → Wireframe → Interface)", "Dynamic headline switcher: 'I don't just design screens.' → 'I explore ideas.'", "Annotation badge: 'this is where the messy ideas begin →'", "Scroll hint with SVG arrow"],
+      "test_ids": ["hero-section", "hero-headline", "hero-kinetic-canvas", "hero-transformation-toggle", "hero-annotation"]
+    },
+    {
+      "id": "node-map",
+      "name": "How I See a Product (Interactive Node Map)",
+      "components": ["Central Interface Node ('PRODUCT CORE')", "Surrounding Nodes: PEOPLE, GOALS, CONTENT, FLOW, CONSTRAINTS, VISUAL LANGUAGE, EDGE CASES", "Connecting interactive SVG spring lines", "Hover reveal handwritten thought bubbles + observations"],
+      "test_ids": ["node-map-section", "node-map-container", "node-item-people", "node-item-goals", "node-item-content", "node-item-flow", "node-item-constraints", "node-item-visual", "node-item-edge-cases", "node-thought-modal"]
+    },
+    {
+      "id": "selected-work",
+      "name": "Selected Work (Product Ecosystem)",
+      "components": ["3 Connected Project Nodes: MentBlue (Healthcare/AI), GoodLives (Mental Health/SaaS), TX (LegalTech)", "Interactive Ecosystem lines connecting to central 'PRODUCTS'", "Hover drawer/card showing Problem, Role, Platform, Domain, Impact", "Click opens full editorial Case Study modal/view"],
+      "test_ids": ["selected-work-section", "project-card-mentblue", "project-card-goodlives", "project-card-tx", "project-hover-preview"]
+    },
+    {
+      "id": "case-studies",
+      "name": "Case Study Editorial Views with MESSY → CLEAR Slider",
+      "components": ["Full Editorial View per project", "Interactive Draggable Messy → Clear comparison slider (Messy sketch → Wireframe → High-fi UI)", "Problem statement, Research insights, Hand-drawn annotations, Systems Breakdown", "Back to projects button"],
+      "test_ids": ["case-study-modal", "case-study-close-btn", "messy-clear-slider", "case-study-content"]
+    },
+    {
+      "id": "sketchbook",
+      "name": "Things I Notice (Sketchbook Observations)",
+      "components": ["Interactive sketchbook grid with handwritten stickies & micro-notes", "Observations on healthcare UX friction, legal tech clarity, AI conversation design, micro-copy delight", "Filter tabs: Micro-UX, Human Behavior, System Design"],
+      "test_ids": ["sketchbook-section", "sketchbook-filter-tabs", "sketchbook-card-1", "sketchbook-card-2", "sketchbook-card-3"]
+    },
+    {
+      "id": "about",
+      "name": "About - Equal Parts Structure and Scribble",
+      "components": ["Artistic Stylized Portrait Visual", "Overlay handwritten annotations pointing to traits (2+ yrs experience, healthcare/legal/AI, detail obsessed, human-centered)", "Editorial bio text spread"],
+      "test_ids": ["about-section", "about-portrait", "about-bio-text", "about-annotations"]
+    },
+    {
+      "id": "gallery",
+      "name": "Outside the Screen (Art Gallery Grid)",
+      "components": ["Artistic digital/handmade painting visual grid", "Stylized SVG/Canvas art pieces & sketches", "Interactive light-box or zoom hover detail"],
+      "test_ids": ["art-gallery-section", "gallery-item-1", "gallery-item-2", "gallery-item-3", "gallery-item-4"]
+    },
+    {
+      "id": "toolkit",
+      "name": "My Actual Toolkit (Conceptual & Digital)",
+      "components": ["Conceptual Tools: Curiosity, Observation, Structure, Visual Thinking, Craft, Iteration", "Digital Tools section: 'And yes, I use Figma too' (Figma, Illustrator, After Effects, Framer) with short descriptions"],
+      "test_ids": ["toolkit-section", "toolkit-conceptual-grid", "toolkit-digital-grid"]
+    },
+    {
+      "id": "garden",
+      "name": "Things I've Grown (Interactive Design Garden)",
+      "components": ["Minimal digital garden plants representing growth in Product Thinking, UI, Visual, Systems, Motion, Art", "Interactive watering/growing click interaction showing growth stages"],
+      "test_ids": ["garden-section", "garden-plant-product-thinking", "garden-plant-ui", "garden-plant-visual", "garden-plant-systems", "garden-plant-motion", "garden-plant-art"]
+    },
+    {
+      "id": "recipe",
+      "name": "A Recipe for a Good Interface (Easter Egg)",
+      "components": ["Editorial recipe card: 'Ingredients: 40% Clarity, 30% Empathy, 20% Visual Rhythm, 10% Delight'", "Interactive toggle for secret chef notes"],
+      "test_ids": ["recipe-card-section", "recipe-card-toggle", "recipe-ingredients-list"]
+    },
+    {
+      "id": "process",
+      "name": "Horizontal Process Timeline",
+      "components": ["5-step interactive process: Understand → Structure → Explore → Design → Refine", "Hand-drawn connectors & process stage details"],
+      "test_ids": ["process-section", "process-step-understand", "process-step-structure", "process-step-explore", "process-step-design", "process-step-refine"]
+    },
+    {
+      "id": "contact",
+      "name": "Contact - Have a Messy Idea?",
+      "components": ["Interactive contact canvas: 'Have a messy idea? Let's make sense of it.'", "Direct mail link: hello@swarangiyeole.com", "LinkedIn link: linkedin.com/in/swarangiyeole", "Interactive scratchpad/sketch form element"],
+      "test_ids": ["contact-section", "contact-email-link", "contact-linkedin-link", "contact-interactive-form"]
+    },
+    {
+      "id": "footer",
+      "name": "Minimal Editorial Footer",
+      "components": ["Footer links and social triggers", "'Built from scratch. No template survived.' Easter egg badge", "Timezone & status pill ('Available for selected product design roles')"],
+      "test_ids": ["footer-section", "footer-easter-egg", "footer-availability-badge"]
+    }
+  ],
+  "accessibility_and_responsive": {
+    "wcag": "AA compliant contrast (4.5:1 min for body, 3:1 for large display)",
+    "prefers_reduced_motion": "All Framer Motion variants respect prefers-reduced-motion fallback",
+    "mobile_recomposition": {
+      "node_map": "Recomposes from radial node web to vertical interactive story timeline",
+      "digital_garden": "Recomposes to horizontal swipeable plant cards",
+      "process_timeline": "Vertical stepped timeline with collapsible stage details"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build out all 14 requested sections with high-level editorial detail, smooth motion, and hand-drawn SVG annotation highlights.",
+    "Ensure every interactive button, input, tab, card, and modal contains appropriate data-testid attributes.",
+    "Do NOT use generic blue or purple gradients or dark cyberpunk colors. Strictly follow the warm ivory/off-white background, charcoal text, and signature orange accent.",
+    "Use Framer Motion for kinetic transformation in hero, node map spring lines, Messy->Clear draggable slider, and digital garden interactions.",
+    "Integrate sonner for feedback notifications (e.g., copying email or submitting contact form)."
+  ]
+}
