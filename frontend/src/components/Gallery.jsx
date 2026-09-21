@@ -7,27 +7,27 @@ import { Note } from "@/components/annotations";
 const PIECES = [
   {
     id: 1, src: "/art-5.jpg", caption: "the sketchbook, outdoors", kind: "pencil on paper",
-    note: "Pencil on paper, drawn outside with plants for company. The sketchbook goes where I go.",
+    note: "Every stroke matters. The pressure of the pencil decides whether a line whispers or speaks.",
     alt: "Pencil sketch of a young woman shielding her eyes, in an open sketchbook held up against green plants",
   },
   {
     id: 2, src: "/art-4.jpg", caption: "lotus, in two moods", kind: "watercolour",
-    note: "One lotus, two moods — warm above, cool below. Painted slowly, water doing most of the talking.",
+    note: "The same flower, caught between stillness and reflection. Watercolour taught me to be patient, and that even mistakes can become beautiful.",
     alt: "Watercolour painting of a white lotus between a warm orange wash and a cool blue wash, paint palette beside it",
   },
   {
     id: 3, src: "/art-3.jpg", caption: "sunflowers, painted in the park", kind: "watercolour · plein air",
-    note: "Painted in the park — sunflowers from life, grass for a desk, paint tin within reach.",
+    note: "The first thing I painted from life, and a reminder that beautiful things don't always need much time.",
     alt: "Small sunflower field watercolour in a sketchbook lying on grass next to a paint tin and brushes",
   },
   {
     id: 4, src: "/art-2.jpg", caption: "a gate in mathura", kind: "photograph",
-    note: "Photographed in Mathura. Someone designed this gate decades ago — it still out-designs most doors.",
+    note: "Designed decades ago, yet still beautiful today. Some things don't need to change to remain timeless.",
     alt: "Photograph of a tall ornate rusted iron gate with intricate scrollwork in Mathura",
   },
   {
     id: 5, src: "/art-1.jpg", caption: "radha's feet, krishna's hands", kind: "acrylic on canvas",
-    note: "Acrylic on canvas — Radha's feet in Krishna's hands. The most patient thing I've painted.",
+    note: "A small moment of devotion, held in colour and stillness. The most patient thing I've ever painted.",
     alt: "Acrylic painting of Krishna's blue hands holding Radha's feet, with a pink lotus beside them",
   },
 ];
