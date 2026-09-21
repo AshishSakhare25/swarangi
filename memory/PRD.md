@@ -37,8 +37,12 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
   linkedin.com/in/swarangi-yeole/, downloadable /resume.pdf, Gurgaon + B.Des line in About
 
 ## Placeholders remaining (clearly marked in UI)
-- 6 art tiles in "Outside the screen" (styled placeholders — awaiting real artwork photos)
 - Case study interface mock frames ("screen placeholder" — awaiting real product screens)
+
+## Real artwork wired (2026-07-21)
+- "Outside the screen" now shows 5 real pieces: pencil sketch (art-5), lotus watercolour (art-4),
+  sunflower watercolour painted in park (art-3), Mathura gate photograph (art-2),
+  Radha/Krishna acrylic on canvas (art-1) — all optimized to 1000px webp→jpg, matted frames, object-contain
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens
