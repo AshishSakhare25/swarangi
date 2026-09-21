@@ -43,6 +43,8 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
 - "Outside the screen" now shows 5 real pieces: pencil sketch (art-5), lotus watercolour (art-4),
   sunflower watercolour painted in park (art-3), Mathura gate photograph (art-2),
   Radha/Krishna acrylic on canvas (art-1) — all optimized to 1000px webp→jpg, matted frames, object-contain
+- 2026-07-21: first four pieces rotated 90° to true vertical (subjects upright); full-screen lightbox added
+  (click/Escape/backdrop close, lenis pause, per-piece creation-day note)
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens
