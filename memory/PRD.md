@@ -53,6 +53,10 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
   portrait (portrait-bw.jpg) with makes things / notices details / finds clarity annotations; Framer removed
   from toolkit; recipe card (with taped coffee+laptop photo) moved into Process section side; contact
   "Let's talk" hover reveals floating copy-email (clipboard + sonner toast) and LinkedIn icons
+- 2026-07-21 tweaks: work cards reverted to original layout + laptop shot beside heading (PRODUCTS badge removed);
+  note line now "there are more. I should probably add them."; observation wall — card 01 dots removed + arrow on
+  hover, card 03 per-button icons/varied colors (apply plain), card 05 bookmark icon; About meta line includes
+  GoodLives + LPU; photo annotations now on paper pills for readability
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens

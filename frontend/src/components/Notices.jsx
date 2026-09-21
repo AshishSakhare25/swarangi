@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import { HandUnderline } from "@/components/annotations";
+import { Search, Filter, Bookmark, MessageCircle, Share2 } from "lucide-react";
 
 const ScribbleRing = ({ className = "" }) => (
   <svg viewBox="0 0 130 44" fill="none" className={className} aria-hidden="true">
@@ -40,9 +41,9 @@ const MiniChrome = () => (
 
 const SpecimenButton = () => (
   <div className="relative flex h-24 items-center justify-center rounded-sm border border-dashed border-line bg-cream/50">
-    <MiniChrome />
-    <span className="relative rounded-full border border-ink/25 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-ash transition-all duration-300 group-hover:border-ember group-hover:bg-ember group-hover:text-paper">
+    <span className="relative flex items-center rounded-full border border-ink/25 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-ash transition-all duration-300 group-hover:border-ember group-hover:bg-ember group-hover:text-paper">
       continue
+      <span className="max-w-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:ml-1.5 group-hover:max-w-[14px] group-hover:opacity-100" aria-hidden="true">→</span>
       <ScribbleRing className="absolute -inset-x-2 -inset-y-2 h-[calc(100%+16px)] w-[calc(100%+16px)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
     </span>
   </div>
@@ -59,17 +60,27 @@ const SpecimenEmpty = () => (
   </div>
 );
 
+const HIERARCHY_BTNS = [
+  { l: "search", Icon: Search, c: "group-hover:border-ember/70 group-hover:text-ember" },
+  { l: "filter", Icon: Filter, c: "group-hover:border-violet-400 group-hover:text-violet-500" },
+  { l: "save", Icon: Bookmark, c: "group-hover:border-sky-500 group-hover:text-sky-600" },
+  { l: "apply", Icon: null, c: "group-hover:border-ink group-hover:text-ink" },
+  { l: "message", Icon: MessageCircle, c: "group-hover:border-emerald-500 group-hover:text-emerald-600" },
+  { l: "share", Icon: Share2, c: "group-hover:border-amber-500 group-hover:text-amber-600" },
+];
+
 const SpecimenHierarchy = () => (
   <div className="rounded-sm border border-dashed border-line bg-cream/50 p-3">
     <MiniChrome />
     <div className="grid grid-cols-3 gap-2">
-      {["search", "filter", "save", "apply", "message", "share"].map((b, i) => (
+      {HIERARCHY_BTNS.map(({ l, Icon, c }, i) => (
         <span
-          key={b}
+          key={l}
           style={{ transitionDelay: `${i * 55}ms` }}
-          className="rounded-full border border-ink/30 bg-white px-1 py-1.5 text-center font-mono text-[9px] uppercase tracking-[0.12em] text-ink/70 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:border-ember/70 group-hover:text-ember"
+          className={`flex items-center justify-center gap-1 rounded-full border border-ink/30 bg-white px-1 py-1.5 text-center font-mono text-[9px] uppercase tracking-[0.12em] text-ink/70 transition-all duration-200 group-hover:-translate-y-0.5 ${c}`}
         >
-          {b}
+          {Icon && <Icon size={10} aria-hidden="true" />}
+          {l}
         </span>
       ))}
     </div>
@@ -92,6 +103,7 @@ const SpecimenMotion = () => (
 const SpecimenDetail = () => (
   <div className="flex h-24 items-center justify-center rounded-sm border border-dashed border-line bg-cream/50">
     <div className="flex items-center gap-2 rounded-full border border-line bg-white px-3.5 py-2 shadow-paper transition-all duration-300 group-hover:border-sage group-hover:shadow-lift">
+      <Bookmark size={10} className="text-ash transition-colors duration-300 group-hover:text-emerald-600" aria-hidden="true" />
       <span className="h-1.5 w-1.5 rounded-full bg-ash transition-colors duration-300 group-hover:bg-emerald-500" aria-hidden="true" />
       <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-smoke group-hover:hidden">unsaved</span>
       <span className="hidden font-mono text-[9px] uppercase tracking-[0.18em] text-smoke group-hover:inline">saved · just now</span>

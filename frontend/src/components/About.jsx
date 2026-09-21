@@ -20,11 +20,11 @@ export default function About() {
             </div>
 
             <div data-testid="about-annotations" className="pointer-events-none absolute inset-0" aria-hidden="true">
-              <Note className="absolute -left-4 top-8 sm:-left-10" rotate={-6}>makes things</Note>
-              <HandArrow className="absolute -left-1 top-[4.2rem] w-11 sm:-left-5" stroke="#FF5A36" />
-              <Note className="absolute -right-3 top-1/4 sm:-right-12" rotate={4}>notices details</Note>
-              <HandArrow className="absolute -right-1 top-[31%] w-11 sm:-right-4" stroke="#FF5A36" flip />
-              <Note className="absolute -left-2 bottom-14 sm:-left-10" rotate={3}>finds clarity</Note>
+              <Note className="absolute -left-4 top-8 rounded-full bg-paper/95 px-3 py-1 shadow-paper sm:-left-10" rotate={-6}>makes things</Note>
+              <HandArrow className="absolute -left-1 top-[4.6rem] w-11 sm:-left-5" stroke="#FF5A36" />
+              <Note className="absolute -right-3 top-1/4 rounded-full bg-paper/95 px-3 py-1 shadow-paper sm:-right-12" rotate={4}>notices details</Note>
+              <HandArrow className="absolute -right-1 top-[33%] w-11 sm:-right-4" stroke="#FF5A36" flip />
+              <Note className="absolute -left-2 bottom-14 rounded-full bg-paper/95 px-3 py-1 shadow-paper sm:-left-10" rotate={3}>finds clarity</Note>
               <HandArrow className="absolute -left-1 bottom-24 w-11 -rotate-[35deg] sm:-left-4" stroke="#FF5A36" />
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function About() {
                 I like systems, but I also like getting lost in colour.
               </p>
               <p className="border-t border-dashed border-line pt-5 font-mono text-xs uppercase tracking-[0.2em] text-ash">
-                Gurgaon, India · B.Des — Product &amp; Industrial Design
+                Gurgaon, India · UI/UX Designer | GoodLives · B.Des — Product &amp; Industrial Design | Lovely Professional University
               </p>
             </div>
           </Reveal>
