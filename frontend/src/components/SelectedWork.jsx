@@ -10,7 +10,17 @@ const META = [
   ["domain", (p) => p.domain],
 ];
 
-const TINT_BG = { skywash: "bg-skywash", sage: "bg-sage", lav: "bg-lav" };
+const CARD_IMG = {
+  mentblue: "/work-mentblue.jpg",
+  goodlives: "/work-goodlives.jpg",
+  tx: "/work-tx.jpg",
+};
+
+const CARD_ALT = {
+  mentblue: "MentBlue landing page on a laptop — deep blue legal career platform",
+  goodlives: "GoodLives dashboard on a laptop — green mental wellness product",
+  tx: "TX event type selection on a laptop — AI event planning assistant",
+};
 
 export default function SelectedWork() {
   return (
@@ -25,41 +35,54 @@ export default function SelectedWork() {
 
       <div className="relative mt-16">
         <div className="pointer-events-none absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 lg:block" aria-hidden="true">
-          <span className="rounded-full border border-dashed border-ink/30 px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.3em] text-ash">
+          <span className="rounded-full border border-dashed border-ink/30 bg-paper px-4 py-1.5 font-mono text-[10px] uppercase tracking-[0.3em] text-ash">
             products
           </span>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.12} className={i === 1 ? "md:mt-16" : i === 2 ? "md:mt-32" : ""}>
               <Link
                 to={`/work/${p.slug}`}
                 data-testid={`project-card-${p.slug}`}
-                className="group block rounded-md border border-line bg-white p-6 shadow-paper transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:-rotate-1 hover:border-ink/40 hover:shadow-lift focus-visible:-translate-y-1.5"
+                className="group block overflow-hidden rounded-md border border-line bg-white shadow-paper transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1.5 hover:-rotate-1 hover:border-ink/40 hover:shadow-lift focus-visible:-translate-y-1.5"
               >
-                <div className="flex items-start justify-between">
-                  <span className="font-mono text-xs text-ash">{p.index}</span>
-                  <span className={`h-8 w-8 rounded-full ${TINT_BG[p.tint]} transition-transform duration-300 group-hover:scale-125`} aria-hidden="true" />
+                <div className="overflow-hidden border-b border-line bg-cream">
+                  <img
+                    src={CARD_IMG[p.slug]}
+                    alt={CARD_ALT[p.slug]}
+                    loading="lazy"
+                    className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
                 </div>
-                <h3 className="mt-8 font-serif text-2xl font-medium tracking-tight sm:text-3xl">{p.name}</h3>
-                <p className="mt-1 font-hand text-lg text-ember">{p.domain}</p>
+                <div className="p-5">
+                  <div className="flex items-baseline justify-between">
+                    <span className="font-mono text-xs text-ash">{p.index}</span>
+                    <span className="font-hand text-lg leading-none text-ember">{p.domain}</span>
+                  </div>
+                  <h3 className="mt-2 font-serif text-2xl font-medium tracking-tight sm:text-[1.7rem]">{p.name}</h3>
 
-                <div className="mt-6 space-y-3 border-t border-dashed border-line pt-5 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100">
-                  {META.map(([k, fn]) => (
-                    <div key={k}>
-                      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ash">{k}</p>
-                      <p className={`mt-0.5 text-sm ${k === "problem" ? "font-hand text-lg leading-tight text-ink" : "text-smoke"}`}>
-                        {fn(p)}
-                      </p>
+                  <div className="grid grid-rows-[1fr] transition-[grid-template-rows] duration-500 ease-out md:grid-rows-[0fr] md:group-hover:grid-rows-[1fr] md:group-focus-visible:grid-rows-[1fr]">
+                    <div className="overflow-hidden">
+                      <div className="space-y-3 pt-4 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
+                        {META.map(([k, fn]) => (
+                          <div key={k}>
+                            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-ash">{k}</p>
+                            <p className={`mt-0.5 ${k === "problem" ? "font-hand text-lg leading-tight text-ink" : "text-sm text-smoke"}`}>
+                              {fn(p)}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
 
-                <p className="mt-6 flex items-center gap-1.5 text-sm font-medium text-ink">
-                  open the case study
-                  <span className="inline-block text-ember transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
-                </p>
+                  <p className="mt-4 flex items-center gap-1.5 border-t border-dashed border-line pt-4 text-sm font-medium text-ink">
+                    open the case study
+                    <span className="inline-block text-ember transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+                  </p>
+                </div>
               </Link>
             </Reveal>
           ))}

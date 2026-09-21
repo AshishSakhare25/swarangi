@@ -10,8 +10,8 @@ export default function About() {
             <div className="scribble-border absolute -inset-3 opacity-30" aria-hidden="true" />
             <div className="relative h-full w-full overflow-hidden rounded-sm border border-line bg-cream">
               <img
-                src="/portrait.jpg"
-                alt="Swarangi Yeole — Product Designer, smiling at a café table"
+                src="/portrait-bw.jpg"
+                alt="Swarangi Yeole — black and white portrait against an old shuttered wall"
                 className="h-full w-full object-cover"
               />
               <span className="absolute bottom-3 left-3 rounded-full bg-paper/85 px-3 py-1 font-hand text-base text-ink" style={{ transform: "rotate(-2deg)" }}>
@@ -20,11 +20,12 @@ export default function About() {
             </div>
 
             <div data-testid="about-annotations" className="pointer-events-none absolute inset-0" aria-hidden="true">
-              <Note className="absolute -left-6 top-8 sm:-left-12" rotate={-6}>art school brain</Note>
-              <Note className="absolute -right-4 top-1/3 sm:-right-14" rotate={4}>notices colour first</Note>
-              <Note className="absolute -left-2 bottom-16 sm:-left-10" rotate={3}>systems person</Note>
-              <HandArrow className="absolute -left-3 top-20 w-12 sm:-left-8" stroke="#FF5A36" />
-              <HandArrow className="absolute -right-2 bottom-28 w-12 sm:-right-6" stroke="#FF5A36" flip />
+              <Note className="absolute -left-4 top-8 sm:-left-10" rotate={-6}>makes things</Note>
+              <HandArrow className="absolute -left-1 top-[4.2rem] w-11 sm:-left-5" stroke="#FF5A36" />
+              <Note className="absolute -right-3 top-1/4 sm:-right-12" rotate={4}>notices details</Note>
+              <HandArrow className="absolute -right-1 top-[31%] w-11 sm:-right-4" stroke="#FF5A36" flip />
+              <Note className="absolute -left-2 bottom-14 sm:-left-10" rotate={3}>finds clarity</Note>
+              <HandArrow className="absolute -left-1 bottom-24 w-11 -rotate-[35deg] sm:-left-4" stroke="#FF5A36" />
             </div>
           </div>
         </Reveal>

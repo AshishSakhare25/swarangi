@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "@/App.css";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Lenis from "lenis";
+import { Toaster } from "sonner";
 import Home from "@/pages/Home";
 import CaseStudy from "@/pages/CaseStudy";
 import Cursor from "@/components/Cursor";
@@ -35,6 +36,7 @@ function App() {
   return (
     <div className="App bg-paper font-sans text-ink antialiased">
       <Cursor />
+      <Toaster position="bottom-center" />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>

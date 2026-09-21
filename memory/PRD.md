@@ -47,6 +47,12 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
   (click/Escape/backdrop close, lenis pause, per-piece creation-day note)
 - 2026-07-21: Node map centre replaced with collage of 5 REAL product screens (MentBlue home + dashboard,
   GoodLives dashboard + sloth signup, TX event selection) — fan-out on hover, compact stack on mobile
+- 2026-07-21 batch: nav avatar face-cropped; Selected Work cards show laptop product shots
+  (work-mentblue/goodlives/tx.jpg) and expand details on hover; "Things I notice" rebuilt as scattered
+  observation wall (5 interactive UI specimens + "Before I design, I notice." statement); About uses B&W
+  portrait (portrait-bw.jpg) with makes things / notices details / finds clarity annotations; Framer removed
+  from toolkit; recipe card (with taped coffee+laptop photo) moved into Process section side; contact
+  "Let's talk" hover reveals floating copy-email (clipboard + sonner toast) and LinkedIn icons
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens

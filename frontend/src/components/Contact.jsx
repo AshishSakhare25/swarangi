@@ -1,5 +1,16 @@
 import Reveal from "@/components/Reveal";
 import { HandUnderline, ScribbleCircle } from "@/components/annotations";
+import { Mail, Linkedin } from "lucide-react";
+import { toast } from "sonner";
+
+const copyEmail = async () => {
+  try {
+    await navigator.clipboard.writeText("swarangi.design@gmail.com");
+    toast("email copied — swarangi.design@gmail.com");
+  } catch {
+    toast("swarangi.design@gmail.com");
+  }
+};
 
 export default function Contact() {
   return (
@@ -23,14 +34,39 @@ export default function Contact() {
             I&apos;m always open to interesting products, design problems, and opportunities to build better digital
             experiences.
           </p>
-          <a
-            data-testid="contact-cta-button"
-            href="mailto:swarangi.design@gmail.com"
-            className="group mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-base text-paper transition-colors duration-300 hover:bg-ember"
-          >
-            Let&apos;s talk
-            <span className="inline-block transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
-          </a>
+          <div className="group relative mt-10 inline-block">
+            <div className="pointer-events-none absolute -top-[4.2rem] left-1/2 flex -translate-x-1/2 translate-y-2 items-center gap-3 opacity-0 transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100">
+              <button
+                data-testid="contact-copy-email-button"
+                onClick={copyEmail}
+                aria-label="Copy email address"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink shadow-lift transition-colors duration-200 hover:border-ember hover:text-ember"
+              >
+                <Mail size={17} />
+              </button>
+              <a
+                data-testid="contact-linkedin-icon"
+                href="https://www.linkedin.com/in/swarangi-yeole/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open LinkedIn profile"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink shadow-lift transition-colors duration-200 hover:border-ember hover:text-ember"
+              >
+                <Linkedin size={17} />
+              </a>
+              <span className="pointer-events-none absolute -bottom-6 left-1/2 w-max -translate-x-1/2 font-hand text-base text-ember" aria-hidden="true">
+                pick a door
+              </span>
+            </div>
+            <a
+              data-testid="contact-cta-button"
+              href="mailto:swarangi.design@gmail.com"
+              className="group/btn inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-base text-paper transition-colors duration-300 hover:bg-ember"
+            >
+              Let&apos;s talk
+              <span className="inline-block transition-transform duration-300 group-hover/btn:translate-x-1" aria-hidden="true">→</span>
+            </a>
+          </div>
         </Reveal>
 
         <Reveal delay={0.2}>

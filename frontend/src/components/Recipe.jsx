@@ -11,17 +11,24 @@ const INGREDIENTS = [
 
 export default function Recipe() {
   return (
-    <section data-testid="recipe-card-section" className="mx-auto max-w-6xl px-6 py-28 sm:py-32">
+    <div data-testid="recipe-card-section" className="w-full">
       <Reveal className="flex flex-col items-center">
         <motion.div
           whileHover={{ rotate: 0, scale: 1.015 }}
           transition={{ type: "spring", stiffness: 200, damping: 18 }}
-          className="ruled-paper w-full max-w-md rounded-sm border border-line bg-white p-8 shadow-paper"
+          className="ruled-paper relative w-full max-w-md rounded-sm border border-line bg-white p-8 shadow-paper"
           style={{ rotate: -1.5 }}
           data-testid="recipe-card"
         >
+          <img
+            src="/recipe-coffee.jpg"
+            alt="Coffee and a laptop mid-design — where the recipe gets tested"
+            data-testid="recipe-coffee-photo"
+            className="absolute -right-3 -top-7 w-24 rotate-3 rounded-[2px] border-4 border-white object-cover shadow-lift sm:-right-5 sm:w-28"
+          />
+          <span className="absolute -top-1 right-10 h-4 w-12 rotate-[38deg] rounded-[1px] bg-cream/90 shadow-paper" aria-hidden="true" />
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ash">from the sketchbook —</p>
-          <h3 className="mt-2 font-serif text-2xl italic tracking-tight text-ink sm:text-3xl">
+          <h3 className="mt-2 max-w-[70%] font-serif text-2xl italic tracking-tight text-ink sm:text-3xl">
             A recipe for a good interface
           </h3>
           <ul data-testid="recipe-ingredients-list" className="mt-7 space-y-[13px]">
@@ -37,6 +44,6 @@ export default function Recipe() {
           </p>
         </motion.div>
       </Reveal>
-    </section>
+    </div>
   );
 }

@@ -10,7 +10,6 @@ import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import Toolkit from "@/components/Toolkit";
 import Garden from "@/components/Garden";
-import Recipe from "@/components/Recipe";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -39,7 +38,6 @@ export default function Home() {
         <Gallery />
         <Toolkit />
         <Garden />
-        <Recipe />
         <Process />
         <Contact />
       </main>

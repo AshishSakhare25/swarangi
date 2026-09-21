@@ -14,7 +14,6 @@ const DIGITAL = [
   ["Figma", "UI design, systems, wireframes and prototypes."],
   ["Adobe Illustrator", "Visual exploration, illustration and brand work."],
   ["Adobe After Effects", "Motion, interaction studies and visual storytelling."],
-  ["Framer", "Responsive websites and interactive prototypes."],
 ];
 
 export default function Toolkit() {
