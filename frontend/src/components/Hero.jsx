@@ -133,7 +133,6 @@ export default function Hero() {
   const [phase, setPhase] = useState(0);
   const [stageIdx, setStageIdx] = useState(0);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end end"] });
-  const noteY = useTransform(scrollYProgress, [0, 1], [0, -70]);
   const canvasY = useTransform(scrollYProgress, [0, 1], [0, 40]);
 
   useMotionValueEvent(scrollYProgress, "change", (v) => {
@@ -201,19 +200,6 @@ export default function Hero() {
                 healthcare, professional networking, AI, and SaaS.
               </p>
             </motion.div>
-
-            <motion.div
-              style={{ y: noteY }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 2.1, duration: 0.8 }}
-              className="mt-8 flex items-start gap-1"
-            >
-              <p data-testid="hero-annotation" className="max-w-[220px] font-hand text-xl leading-snug text-ember" style={{ transform: "rotate(-2deg)" }}>
-                this is where the messy ideas begin
-              </p>
-              <HandArrow className="mt-4 w-14 shrink-0" stroke="#FF5A36" />
-            </motion.div>
           </div>
 
           <motion.div
@@ -222,8 +208,20 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.9, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto aspect-square w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px]"
+            className="relative mx-auto w-full max-w-[300px] sm:max-w-[380px] md:max-w-[440px]"
           >
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 2.1, duration: 0.8 }}
+              className="mb-2.5 flex items-end justify-start gap-1 pl-1"
+            >
+              <p data-testid="hero-annotation" className="font-hand text-xl leading-snug text-ember" style={{ transform: "rotate(-2deg)" }}>
+                this is where the messy ideas begin
+              </p>
+              <HandArrow className="mb-1 w-12 shrink-0" stroke="#FF5A36" />
+            </motion.div>
+            <div className="relative aspect-square w-full">
             <div className="scribble-border absolute -inset-3 opacity-25" aria-hidden="true" />
             <div className="absolute inset-0 overflow-hidden rounded-sm border border-line bg-cream/60">
               <Stage progress={scrollYProgress} range={[-0.01, 0.01, 0.2, 0.28]}>
@@ -239,7 +237,7 @@ export default function Hero() {
                 <ProductStage />
               </Stage>
             </div>
-
+          </div>
             <div className="absolute -bottom-12 left-1/2 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap">
               {STAGES.map((s, i) => (
                 <span key={s} className="flex items-center gap-2">
