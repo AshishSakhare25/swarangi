@@ -11,9 +11,9 @@ const META = [
 ];
 
 const CARD_IMG = {
-  mentblue: "/work-mentblue.jpg",
-  goodlives: "/work-goodlives.jpg",
-  tx: "/work-tx.jpg",
+  mentblue: "/work-mentblue.png",
+  goodlives: "/work-goodlives.png",
+  tx: "/work-tx.png",
 };
 
 const CARD_ALT = {
@@ -57,7 +57,7 @@ export default function SelectedWork() {
                   src={CARD_IMG[p.slug]}
                   alt={CARD_ALT[p.slug]}
                   loading="lazy"
-                  className="w-24 shrink-0 rounded-[3px] border border-line object-cover shadow-paper transition-transform duration-300 group-hover:rotate-2 group-hover:scale-105 sm:w-28"
+                  className="w-24 shrink-0 object-contain drop-shadow-md transition-transform duration-300 group-hover:rotate-2 group-hover:scale-105 sm:w-28"
                 />
               </div>
 
