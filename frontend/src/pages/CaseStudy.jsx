@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useParams, useNavigate, Link, Navigate } from "react-router-dom";
-import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useMotionValueEvent, useScroll, useSpring, useTransform } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MessyClearSlider from "@/components/MessyClearSlider";
@@ -202,6 +203,76 @@ const SlothStory = () => {
   );
 };
 
+const InterfaceCarousel = ({ shots, liveUrl }) => {
+  const [idx, setIdx] = useState(0);
+  const go = (d) => setIdx((i) => (i + d + shots.length) % shots.length);
+  const shot = shots[idx];
+
+  return (
+    <figure data-testid="interface-carousel" className="group overflow-hidden rounded-md border border-line bg-white p-3 shadow-paper">
+      <div className="relative overflow-hidden rounded-sm border border-line">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={shot.src}
+            src={shot.src}
+            alt={shot.alt}
+            initial={{ opacity: 0, x: 26 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -26 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="max-h-[520px] w-full object-cover object-top"
+          />
+        </AnimatePresence>
+        <button
+          data-testid="carousel-prev"
+          onClick={() => go(-1)}
+          aria-label="Previous screen"
+          className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-paper/90 text-ink shadow-paper backdrop-blur transition-colors hover:border-ember hover:text-ember"
+        >
+          <ChevronLeft size={18} />
+        </button>
+        <button
+          data-testid="carousel-next"
+          onClick={() => go(1)}
+          aria-label="Next screen"
+          className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-paper/90 text-ink shadow-paper backdrop-blur transition-colors hover:border-ember hover:text-ember"
+        >
+          <ChevronRight size={18} />
+        </button>
+      </div>
+      <figcaption className="flex flex-wrap items-center justify-between gap-3 px-1 pt-3">
+        <span className="font-hand text-lg text-ink">{shot.caption}</span>
+        <span className="flex items-center gap-1.5">
+          {shots.map((_, i) => (
+            <button
+              key={i}
+              data-testid={`carousel-dot-${i}`}
+              onClick={() => setIdx(i)}
+              aria-label={`Go to screen ${i + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === idx ? "w-5 bg-ember" : "w-1.5 bg-ink/20 hover:bg-ink/40"}`}
+            />
+          ))}
+        </span>
+        <span className="font-mono text-[9px] uppercase tracking-[0.15em] text-ember">real screens · {idx + 1}/{shots.length}</span>
+      </figcaption>
+      {liveUrl && (
+        <p className="px-1 pb-1 pt-2">
+          <a
+            data-testid="case-study-live-link"
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/live font-hand text-lg text-smoke transition-colors hover:text-ember"
+          >
+            visit mentblue.com to see the product live
+            <span className="inline-block transition-transform duration-300 group-hover/live:translate-x-1" aria-hidden="true"> →</span>
+          </a>
+        </p>
+      )}
+    </figure>
+  );
+};
+
 export default function CaseStudy() {
   const { slug } = useParams();
   const project = getProject(slug);
@@ -291,9 +362,12 @@ export default function CaseStudy() {
 
           <Chapter num="04" title="The interface">
             <p className="text-base leading-relaxed text-smoke sm:text-lg">{c.interface}</p>
-            {project.interfaceShots ? (
+            {project.interfaceShots || project.interfaceCarousel ? (
               <div className="mt-8 space-y-6">
-                {project.interfaceShots.map((s) => (
+                {project.interfaceCarousel && (
+                  <InterfaceCarousel shots={project.interfaceCarousel} liveUrl={project.liveUrl} />
+                )}
+                {(project.interfaceShots || []).map((s) => (
                   <figure key={s.src} className="group overflow-hidden rounded-md border border-line bg-white p-3 shadow-paper transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lift">
                     <div className="overflow-hidden rounded-sm border border-line">
                       <img src={s.src} alt={s.alt} loading="lazy" className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]" />

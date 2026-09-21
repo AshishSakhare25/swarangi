@@ -3,7 +3,7 @@ export const PROJECTS = [
     slug: "mentblue",
     index: "01",
     name: "MentBlue",
-    tagline: "A LinkedIn-like professional platform for law students and legal professionals.",
+    tagline: "A professional platform for law students and legal professionals.",
     problem: "Too much to fit into one product.",
     role: "Product Designer",
     platform: "Web + Mobile",
@@ -17,8 +17,16 @@ export const PROJECTS = [
       clearImage: "/cs-mentblue-dashboard.jpg",
     },
     interfaceShots: [
-      { src: "/cs-mentblue-dashboard.jpg", alt: "MentBlue web dashboard — overview with eligible opportunities and recommended internships", caption: "the dashboard — desktop" },
       { src: "/screen-mentblue-home.jpg", alt: "MentBlue landing page on a laptop mockup", caption: "the website" },
+    ],
+    liveUrl: "https://mentblue.com",
+    interfaceCarousel: [
+      { src: "/cs-mentblue-dashboard.jpg", alt: "MentBlue student dashboard — overview with eligible opportunities and recommended internships", caption: "the dashboard — desktop" },
+      { src: "/cs-mb-courses.jpg", alt: "MentBlue courses and webinars listing with enroll states", caption: "courses & webinars" },
+      { src: "/cs-mb-hackathons.jpg", alt: "MentBlue Law Firm Fit hackathon discovery with badges", caption: "law firm fit — hackathons" },
+      { src: "/cs-mb-applications.jpg", alt: "MentBlue my applications pipeline from applied to offered", caption: "my applications — the journey pipeline" },
+      { src: "/cs-mb-recruiter.jpg", alt: "MentBlue recruiter dashboard with applicants graph", caption: "recruiter dashboard" },
+      { src: "/cs-mb-admin.jpg", alt: "MentBlue admin dashboard with revenue and user distribution charts", caption: "admin dashboard" },
     ],
     chapters: {
       mess: "Internships, jobs, mentorship, hackathons, courses, webinars, question banks and professional networking — all inside one product, for students, professionals, recruiters and admins at the same time. The challenge was never any single screen. It was everything, at once.",

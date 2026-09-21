@@ -60,6 +60,9 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
 - 2026-07-21: MentBlue case study uses REAL screens — slider CLEAR side = actual dashboard
   (cs-mentblue-dashboard.jpg), middle = hand-built lo-fi wireframe of the same screen; THE INTERFACE chapter
   shows real dashboard + website shots tagged "real screen". GoodLives/TX still use mock frames (next)
+- 2026-07-21 (visual edits): tagline de-"LinkedIn-like"d; THE INTERFACE now a 6-slide carousel (dashboard,
+  courses, hackathons, applications pipeline, recruiter, admin) + "visit mentblue.com" live link;
+  slider CLEAR label turns green when active
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens

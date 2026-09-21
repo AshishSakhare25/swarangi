@@ -187,7 +187,7 @@ export default function MessyClearSlider({ project }) {
       <div className="mb-4 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em]">
         <span className={p < 0.4 ? "text-ember" : "text-ash"}>messy</span>
         <span className="text-ash/70" aria-hidden="true">←—— drag ——→</span>
-        <span className={p > 0.6 ? "text-ember" : "text-ash"}>clear</span>
+        <span className={p > 0.6 ? "text-emerald-600" : "text-ash"}>clear</span>
       </div>
 
       <div
