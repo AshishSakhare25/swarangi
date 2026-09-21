@@ -83,13 +83,21 @@ export const PROJECTS = [
     role: "Product Designer",
     platform: "Web",
     domain: "AI / Events",
-    timeline: "Product experience design",
+    timeline: "≈ 3 months",
     tint: "lav",
     slider: {
       messy: ["venues", "vendors", "schedules", "guests", "budgets", "timelines", "follow-ups", "last-minute changes"],
       wireLabel: "workflows arranged around an assistant, not a checklist",
-      clearLabel: "premium and minimal — calm on top of complexity",
+      clearLabel: "one wedding, every thread in view",
+      clearImage: "/cs-tx-details.jpg",
     },
+    interfaceCarousel: [
+      { src: "/cs-tx-overview.jpg", alt: "TX planner overview dashboard with projects, financials and AI insights", caption: "the overview — every event at a glance" },
+      { src: "/cs-tx-aichat.jpg", alt: "TX AI consultant turning a rough wedding brief into a structured project", caption: "the AI consultant — brief by talking" },
+      { src: "/cs-tx-details.jpg", alt: "TX project details overview for a multi-day wedding with budget and vendors", caption: "project details — the wedding, structured" },
+      { src: "/cs-tx-function.jpg", alt: "TX assigned functions vendor view with live chat", caption: "function detail + live chat" },
+      { src: "/cs-tx-deck.jpg", alt: "TX concept deck client view with slides panel", caption: "the concept deck — client view" },
+    ],
     chapters: {
       mess: "Event planning is a hundred parallel threads — venues, vendors, schedules, people, budgets — and planners hold most of it in their heads. The information exists. Navigating it is the hard part.",
       questions: [

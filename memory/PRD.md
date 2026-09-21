@@ -63,6 +63,9 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
 - 2026-07-21 (visual edits): tagline de-"LinkedIn-like"d; THE INTERFACE now a 6-slide carousel (dashboard,
   courses, hackathons, applications pipeline, recruiter, admin) + "visit mentblue.com" live link;
   slider CLEAR label turns green when active
+- 2026-07-21: TX case study — timeline "≈ 3 months"; slider CLEAR = project details overview screen;
+  5-slide carousel (planner overview, AI consultant, project details, function+live chat, concept deck),
+  carousel only (no extra cards); MentBlue website shot now full-length scrollable box
 
 ## Backlog / Next
 - P0: Swap in real artwork photos (Outside the screen) and real case study screens
