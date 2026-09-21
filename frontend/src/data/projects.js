@@ -25,7 +25,7 @@ export const PROJECTS = [
         "What has to scale into Phase 2 without redesigning Phase 1?",
       ],
       structure: "One shared design system. One dashboard shell that adapts per user type. Mapped flows for the journeys that mattered most — hackathon registration and journey, job and internship applications, CV management — plus recruiter and admin dashboards that speak the same language.",
-      interface: "The web dashboard, designed across desktop and mobile views, along with the website. One visual language, many contexts.",
+      interface: "The web dashboard, designed across desktop and mobile views, along with the website — 120+ high-fidelity screens across the two phases, in one visual language, across many contexts.",
       experience: "Prototypes for the key journeys, responsive behaviour across breakpoints, developer handoff and design QA to keep the build honest to the design.",
       changed: "What started as a feature pile became a coherent platform — a system the team could keep building on, and journeys users could follow without a map.",
       note: "The founders arrived with the initial product brief, research and competitor research. My job was to turn that complexity into a product.",

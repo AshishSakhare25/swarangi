@@ -54,8 +54,8 @@ export default function Nav() {
             className="group flex items-center gap-2.5"
             aria-label="Swarangi Yeole — home"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-ink font-serif text-sm italic text-paper transition-colors duration-300 group-hover:bg-ember">
-              S
+            <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border border-line bg-cream transition-transform duration-300 group-hover:scale-105">
+              <img src="/avatar.jpg" alt="" className="h-full w-full object-cover" />
             </span>
             <span className="font-mono text-xs font-medium uppercase tracking-[0.22em]">
               Swarangi<span className="text-ember">.</span>

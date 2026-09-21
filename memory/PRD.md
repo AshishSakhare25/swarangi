@@ -29,19 +29,18 @@ Build a completely original, non-template personal portfolio for Swarangi Yeole,
 - Lenis smooth scroll + custom ink cursor (pointer:fine only)
 - Floating pill nav with mobile full-screen menu; hash scroll works across routes
 - Case study pages with draggable 3-layer Messy↔Clear slider (pointer + keyboard slider role)
-- GoodLives sloth signup story strip; MentBlue honesty note (founders supplied research)
-- Editorial marquee (thought → sketch → structure → product → repeat)
-- Footer Easter egg "Built from scratch. No template survived."
-- Page title/meta updated
+- GoodLives sloth: scroll-driven scene — climbs the tree, takes the fruit, climbs down, eats it, with stage captions
+- Per-project richer mock screens: MentBlue dashboard+mobile, GoodLives mobile+web, TX assistant chat+workspace
+- MentBlue chapter now cites real figure from resume: 120+ high-fidelity screens across Phase 1 & 2
+- Editorial marquee, footer Easter egg, page title/meta, favicon.svg, OG share image (photo + name, /og-image.png)
+- REAL assets wired (2026-07-21): portrait.jpg in About (+ nav avatar.jpg), swarangi.design@gmail.com,
+  linkedin.com/in/swarangi-yeole/, downloadable /resume.pdf, Gurgaon + B.Des line in About
 
-## Placeholders (clearly marked in UI)
-- Portrait in About ("portrait placeholder — swap with your photo")
-- 6 art tiles in "Outside the screen" (styled placeholders)
-- Case study interface screens ("screen placeholder" mock frames)
-- Contact: hello@swarangiyeole.com + linkedin.com/in/swarangiyeole (placeholders)
+## Placeholders remaining (clearly marked in UI)
+- 6 art tiles in "Outside the screen" (styled placeholders — awaiting real artwork photos)
+- Case study interface mock frames ("screen placeholder" — awaiting real product screens)
 
 ## Backlog / Next
-- P0: Swap in real portrait, artwork photos, real case study screens (replace placeholders)
-- P1: Real email + LinkedIn URLs
-- P1: Favicon + Open Graph share image
-- P2: Dark "night sketchbook" mode; per-project hero animations; blog/"Thinking" writing section
+- P0: Swap in real artwork photos (Outside the screen) and real case study screens
+- P1: New section — user is deciding between a "Thinking" writing/notes section vs dark "night sketchbook" mode
+- P2: Custom domain + deploy; per-project hero animations

@@ -25,7 +25,7 @@ export default function Contact() {
           </p>
           <a
             data-testid="contact-cta-button"
-            href="mailto:hello@swarangiyeole.com"
+            href="mailto:swarangi.design@gmail.com"
             className="group mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-base text-paper transition-colors duration-300 hover:bg-ember"
           >
             Let&apos;s talk
@@ -37,24 +37,36 @@ export default function Contact() {
           <div className="mt-16 flex flex-col items-center justify-center gap-4 border-t border-dashed border-line pt-10 sm:flex-row sm:gap-14">
             <a
               data-testid="contact-email-link"
-              href="mailto:hello@swarangiyeole.com"
+              href="mailto:swarangi.design@gmail.com"
               className="group font-mono text-sm tracking-wide text-ink"
             >
               <span className="mr-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ash">email</span>
               <span className="border-b border-transparent transition-colors duration-200 group-hover:border-ember group-hover:text-ember">
-                hello@swarangiyeole.com
+                swarangi.design@gmail.com
               </span>
             </a>
             <a
               data-testid="contact-linkedin-link"
-              href="https://www.linkedin.com/in/swarangiyeole"
+              href="https://www.linkedin.com/in/swarangi-yeole/"
               target="_blank"
               rel="noopener noreferrer"
               className="group font-mono text-sm tracking-wide text-ink"
             >
               <span className="mr-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ash">linkedin</span>
               <span className="border-b border-transparent transition-colors duration-200 group-hover:border-ember group-hover:text-ember">
-                /swarangiyeole
+                /swarangi-yeole
+              </span>
+            </a>
+            <a
+              data-testid="contact-resume-link"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group font-mono text-sm tracking-wide text-ink"
+            >
+              <span className="mr-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ash">resume</span>
+              <span className="border-b border-transparent transition-colors duration-200 group-hover:border-ember group-hover:text-ember">
+                the pdf ↓
               </span>
             </a>
           </div>

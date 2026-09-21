@@ -9,20 +9,13 @@ export default function About() {
           <div data-testid="about-portrait" className="relative mx-auto aspect-[4/5] max-w-sm">
             <div className="scribble-border absolute -inset-3 opacity-30" aria-hidden="true" />
             <div className="relative h-full w-full overflow-hidden rounded-sm border border-line bg-cream">
-              <svg viewBox="0 0 300 375" className="h-full w-full" aria-label="Stylized portrait placeholder for Swarangi">
-                <rect width="300" height="375" fill="#F5F1E8" />
-                <circle cx="150" cy="120" r="52" fill="#EADEF0" />
-                <path d="M150 172 C 100 178, 78 220, 74 300 L 226 300 C 222 220, 200 178, 150 172 Z" fill="#E3EDE3" />
-                <circle cx="150" cy="120" r="52" fill="none" stroke="#1A1A1A" strokeWidth="2" strokeDasharray="4 5" />
-                <path d="M150 172 C 100 178, 78 220, 74 300 M 150 172 C 200 178, 222 220, 226 300" fill="none" stroke="#1A1A1A" strokeWidth="2" strokeDasharray="4 5" />
-                <circle cx="132" cy="114" r="3.5" fill="#1A1A1A" />
-                <circle cx="168" cy="114" r="3.5" fill="#1A1A1A" />
-                <path d="M138 138 C 146 144, 156 144, 163 138" fill="none" stroke="#1A1A1A" strokeWidth="2" strokeLinecap="round" />
-                <circle cx="238" cy="52" r="16" fill="#FF5A36" opacity="0.85" />
-                <path d="M30 330 C 90 322, 210 322, 272 330" stroke="#1A1A1A" strokeWidth="1.5" strokeDasharray="3 6" fill="none" />
-              </svg>
-              <span className="absolute bottom-3 left-3 rounded-full bg-ink/80 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.2em] text-paper">
-                portrait placeholder — swap with your photo
+              <img
+                src="/portrait.jpg"
+                alt="Swarangi Yeole — Product Designer, smiling at a café table"
+                className="h-full w-full object-cover"
+              />
+              <span className="absolute bottom-3 left-3 rounded-full bg-paper/85 px-3 py-1 font-hand text-base text-ink" style={{ transform: "rotate(-2deg)" }}>
+                hi, that&apos;s me
               </span>
             </div>
 
@@ -58,6 +51,9 @@ export default function About() {
               </p>
               <p className="font-serif text-lg italic text-ink">
                 I like systems, but I also like getting lost in colour.
+              </p>
+              <p className="border-t border-dashed border-line pt-5 font-mono text-xs uppercase tracking-[0.2em] text-ash">
+                Gurgaon, India · B.Des — Product &amp; Industrial Design
               </p>
             </div>
           </Reveal>
