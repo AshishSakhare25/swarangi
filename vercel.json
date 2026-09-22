@@ -6,7 +6,11 @@
     },
     "backend": {
       "root": "backend/",
+<<<<<<< HEAD
       "framework": "fastapi"
+=======
+      "entrypoint": "server:app"
+>>>>>>> 40f01d6 (Update project)
     }
   },
   "rewrites": [
@@ -23,4 +27,8 @@
       }
     }
   ]
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 40f01d6 (Update project)
