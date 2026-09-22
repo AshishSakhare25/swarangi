@@ -72,6 +72,46 @@ const MentBlueWire = () => (
   </div>
 );
 
+const GoodLivesWire = () => (
+  <div className="relative flex h-[82%] flex-col overflow-hidden rounded-2xl border-[1.5px] border-ink/50 bg-white" style={{ aspectRatio: "9/17" }}>
+    <div className="flex items-center justify-between px-3 pt-2">
+      <div className="h-3.5 w-3.5 rounded-full border border-ink/40" />
+      <div className="h-1.5 w-10 rounded-full bg-ink/15" />
+    </div>
+    <div className="relative mt-1 h-[26%]">
+      <div className="absolute -left-6 -top-8 h-24 w-24 rounded-full bg-ink/10" />
+      <div className="absolute left-1/4 -top-10 h-28 w-28 rounded-full bg-ink/10" />
+      <div className="absolute -right-8 -top-6 h-24 w-24 rounded-full bg-ink/10" />
+      <div className="absolute -left-2 top-4 h-16 w-3 rotate-6 rounded-full bg-ink/20" />
+    </div>
+    <div className="mx-4 rounded-2xl rounded-bl-sm border-[1.5px] border-ink/40 bg-cream/60 p-2.5">
+      <div className="h-1.5 w-3/5 rounded-full bg-ink/30" />
+      <div className="mt-1 h-1.5 w-4/5 rounded-full bg-ink/15" />
+      <div className="mt-1 h-1.5 w-1/2 rounded-full bg-ink/15" />
+    </div>
+    <div className="relative flex-1">
+      <div className="absolute bottom-1 left-3 flex flex-col items-center">
+        <div className="h-7 w-6 rounded-full border-[1.5px] border-ink/45 bg-ink/10" />
+        <div className="-mt-1 h-9 w-8 rounded-full border-[1.5px] border-ink/45 bg-ink/10" />
+      </div>
+      <div className="absolute bottom-2 right-4 h-2 w-2 rotate-45 rounded-[2px] bg-ink/10" />
+      <div className="absolute bottom-10 right-8 h-2 w-2 rotate-12 rounded-[2px] bg-ink/10" />
+    </div>
+    <div className="space-y-2 bg-ink/[0.07] px-4 pb-3 pt-3">
+      <div className="h-7 rounded-full border border-ink/30 bg-white" />
+      <div className="flex items-center gap-2">
+        <div className="h-px flex-1 bg-ink/25" />
+        <div className="h-1.5 w-4 rounded-full bg-ink/30" />
+        <div className="h-px flex-1 bg-ink/25" />
+      </div>
+      <div className="flex gap-2">
+        <div className="h-7 flex-1 rounded-full bg-ink/20" />
+        <div className="h-7 flex-1 rounded-full bg-ink/20" />
+      </div>
+    </div>
+  </div>
+);
+
 const WireLayer = ({ label, opacity, children }) => (
   <div className="absolute inset-0 flex items-center justify-center bg-paper" style={{ opacity }} aria-hidden={opacity < 0.5}>
     {children ? (
@@ -106,8 +146,8 @@ const ClearLayer = ({ label, tint, opacity, image }) => {
   if (image)
     return (
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-cream/60" style={{ opacity }} aria-hidden={opacity < 0.5}>
-        <div className="h-[78%] w-[88%] max-w-2xl overflow-hidden rounded-md border border-line bg-white shadow-lift">
-          <img src={image} alt="Final product screen" className="h-full w-full object-cover object-top" />
+        <div className="flex h-[78%] w-[88%] max-w-2xl items-center justify-center overflow-hidden rounded-md border border-line bg-white shadow-lift">
+          <img src={image} alt="Final product screen" className="max-h-full max-w-full object-contain" />
         </div>
         <p className="mt-4 font-hand text-xl text-ember" style={{ transform: "rotate(1.5deg)" }}>
           {label}
@@ -206,7 +246,7 @@ export default function MessyClearSlider({ project }) {
       >
         <ClearLayer label={project.slider.clearLabel} tint={project.tint} opacity={clearOp} image={project.slider.clearImage} />
         <WireLayer label={project.slider.wireLabel} opacity={wireOp}>
-          {project.slug === "mentblue" ? <MentBlueWire /> : null}
+          {project.slug === "mentblue" ? <MentBlueWire /> : project.slug === "goodlives" ? <GoodLivesWire /> : null}
         </WireLayer>
         <MessyLayer items={project.slider.messy} opacity={messyOp} />
 

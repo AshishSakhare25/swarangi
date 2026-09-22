@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useParams, useNavigate, Link, Navigate } from "react-router-dom";
-import { motion, AnimatePresence, useMotionValueEvent, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MessyClearSlider from "@/components/MessyClearSlider";
 import Reveal from "@/components/Reveal";
-import { HandUnderline, Note } from "@/components/annotations";
+import { HandUnderline } from "@/components/annotations";
 import { PROJECTS, getProject } from "@/data/projects";
 
 const TINT_BG = { skywash: "bg-skywash", sage: "bg-sage", lav: "bg-lav" };
@@ -111,7 +111,6 @@ const MockAssistant = ({ tint }) => (
 
 const MOCK_VARIANTS = {
   mentblue: [["dashboard", "web dashboard — desktop"], ["mobile", "dashboard — mobile view"]],
-  goodlives: [["mobile", "wellness app — mobile"], ["dashboard", "web experience"]],
   tx: [["assistant", "the assistant"], ["dashboard", "planner workspace"]],
 };
 
@@ -128,80 +127,6 @@ const MockFrame = ({ project, variant, caption }) => (
     </figcaption>
   </figure>
 );
-
-const SLOTH_STAGES = ["climbs the tree", "reaches the fruit", "climbs back down", "enjoys it"];
-
-const SlothStory = () => {
-  const ref = useRef(null);
-  const [stage, setStage] = useState(0);
-  const [hasFruit, setHasFruit] = useState(false);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.9", "end 0.4"] });
-  const rawY = useTransform(scrollYProgress, [0, 0.42, 0.52, 0.85, 1], [76, 14, 14, 60, 68]);
-  const y = useSpring(rawY, { stiffness: 80, damping: 18 });
-  const left = useTransform(scrollYProgress, [0, 0.42, 0.85, 1], [30, 30, 62, 62]);
-
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    setHasFruit(v > 0.48);
-    setStage(v < 0.42 ? 0 : v < 0.54 ? 1 : v < 0.86 ? 2 : 3);
-  });
-
-  return (
-    <div data-testid="sloth-scene" className="mt-8">
-      <div ref={ref} className="relative h-[380px] overflow-hidden rounded-md border border-line bg-sage/40 sm:h-[420px]">
-        <svg className="absolute inset-0 h-full w-full" preserveAspectRatio="none" viewBox="0 0 100 100" aria-hidden="true">
-          <path d="M30 100 C 29 70, 31 35, 30 4" stroke="#1A1A1A" strokeOpacity="0.5" strokeWidth="0.7" fill="none" />
-          <path d="M30 22 C 36 18, 41 18, 46 21 M 30 40 C 24 36, 19 36, 15 39" stroke="#1A1A1A" strokeOpacity="0.4" strokeWidth="0.5" fill="none" />
-          {[[18, 30], [44, 34], [20, 58], [42, 10], [24, 12]].map(([x, yy]) => (
-            <ellipse key={`${x}-${yy}`} cx={x} cy={yy} rx="3.4" ry="1.6" fill="#E3EDE3" stroke="#1A1A1A" strokeOpacity="0.35" strokeWidth="0.3" />
-          ))}
-        </svg>
-        <motion.span
-          className="absolute h-3.5 w-3.5 rounded-full bg-ember"
-          style={{ left: "44%", top: "17%" }}
-          animate={{ opacity: hasFruit ? 0 : 1, scale: hasFruit ? 0.4 : 1 }}
-          transition={{ duration: 0.35 }}
-          aria-hidden="true"
-        />
-        <motion.div
-          className="absolute flex h-12 w-9 -translate-x-1/2 -translate-y-1/2 items-start justify-center rounded-full border-[1.5px] border-ink/60 bg-lav shadow-paper"
-          style={{ top: useTransform(y, (v) => `${v}%`), left: useTransform(left, (v) => `${v}%`) }}
-          aria-hidden="true"
-        >
-          <span className="mt-2.5 flex gap-1.5">
-            <span className="h-1 w-1 rounded-full bg-ink/70" />
-            <span className="h-1 w-1 rounded-full bg-ink/70" />
-          </span>
-          <motion.span
-            className="absolute -right-2 top-0 h-3.5 w-3.5 rounded-full bg-ember"
-            animate={{ opacity: hasFruit ? 1 : 0, scale: hasFruit ? 1 : 0.3 }}
-            transition={{ duration: 0.35 }}
-          />
-        </motion.div>
-        {stage === 3 && (
-          <motion.p
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="absolute right-[18%] top-[52%] font-hand text-2xl text-ember"
-            style={{ transform: "rotate(-3deg)" }}
-          >
-            mmm. worth the climb.
-          </motion.p>
-        )}
-        <p className="absolute left-4 top-4 font-mono text-[9px] uppercase tracking-[0.2em] text-ash">
-          the signup, retold — scroll to move the sloth
-        </p>
-      </div>
-      <div className="mt-4 flex flex-wrap justify-center gap-x-6 gap-y-1.5">
-        {SLOTH_STAGES.map((s, i) => (
-          <span key={s} className={`flex items-center gap-1.5 font-hand text-lg transition-colors duration-300 ${stage === i ? "text-ember" : "text-ash/60"}`}>
-            <span className="font-mono text-[9px]">{i + 1}</span>
-            {s}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const InterfaceCarousel = ({ shots, liveUrl }) => {
   const [idx, setIdx] = useState(0);
@@ -402,21 +327,47 @@ export default function CaseStudy() {
                   </figure>
                 ))}
               </div>
-            ) : (
+            ) : MOCK_VARIANTS[project.slug] ? (
             <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
               {MOCK_VARIANTS[project.slug].map(([variant, caption]) => (
                 <MockFrame key={variant} project={project} variant={variant} caption={caption} />
               ))}
             </div>
-            )}
+            ) : null}
           </Chapter>
 
           <Chapter num="05" title="The experience">
             <p className="text-base leading-relaxed text-smoke sm:text-lg">{c.experience}</p>
             {project.slug === "goodlives" && (
               <>
-                <Note className="mt-6" rotate={-1.5}>the sloth carries the whole signup — slow on purpose</Note>
-                <SlothStory />
+                <div className="mt-8 flex justify-center">
+                  <video
+                    data-testid="gl-onboarding-video"
+                    src="/gl-onboarding.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    className="w-full max-w-sm rounded-xl border border-line bg-ink shadow-lift"
+                  />
+                </div>
+                <p className="mt-6 text-center font-hand text-xl text-smoke" style={{ transform: "rotate(-1deg)" }}>
+                  download the GoodLives app to see it live
+                </p>
+                <p className="mt-2 text-center font-hand text-lg text-smoke">
+                  visit{" "}
+                  <a
+                    data-testid="goodlives-live-link"
+                    href="https://goodlives.in"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-b border-ember/50 text-ember transition-colors hover:text-emberdeep"
+                  >
+                    goodlives.in&nbsp;↗
+                  </a>{" "}
+                  to experience the web dashboard
+                </p>
               </>
             )}
           </Chapter>

@@ -51,14 +51,15 @@ export const PROJECTS = [
     tagline: "A mental wellness product that needed to feel less clinical and more human.",
     problem: "Making mental wellness feel more approachable.",
     role: "UI/UX Designer",
-    platform: "Mobile + Web",
+    platform: "Mobile app + Web dashboard",
     domain: "Healthcare / Wellness",
-    timeline: "Product experience & visual design",
+    timeline: "≈ 2 months",
     tint: "sage",
     slider: {
       messy: ["static forms", "clinical tone", "cold first impression", "signup as a chore", "no warmth", "no story"],
       wireLabel: "a signup rebuilt as a small story, not a gate",
-      clearLabel: "warmth you feel before the product asks you anything",
+      clearLabel: "the sloth welcomes you back",
+      clearImage: "/cs-gl-sloth.jpg",
     },
     chapters: {
       mess: "Wellness products often arrive as forms and dashboards. The old signup experience felt static — a chore standing between a person and the care they came for. For a mental wellness product, that first impression matters more than most.",
